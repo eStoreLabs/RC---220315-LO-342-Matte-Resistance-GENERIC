@@ -85,21 +85,8 @@ body {
   text-transform: uppercase;
   text-shadow: 1px 1px 1px black;
 }
-#es-loreal.es-loreal .es-kv__fancy {
-  align-self: flex-start;
-  margin: 0;
-  padding: 0;
-  line-height: inherit;
-  color: inherit;
-  font-family: inherit;
-  font-weight: inherit;
-  margin-bottom: 5px;
-  margin: 5px;
-  max-width: 200px;
-  font-size: 12px;
-  font-weight: 600;
-  color: #fff;
-  text-transform: uppercase;
+#es-loreal.es-loreal .es-kv__brand-title--text span {
+  font-size: 10px;
 }
 #es-loreal.es-loreal .es-kv__title {
   margin: 0;
@@ -341,21 +328,120 @@ body {
   max-width: 260px;
   text-align: left;
 }
+#es-loreal.es-loreal .es-benefits__banner-labels--mobile {
+  position: static;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  max-width: 90%;
+}
 #es-loreal.es-loreal .es-benefits__banner-labels b {
   color: #93060c;
   font-size: 17px;
 }
 #es-loreal.es-loreal .es-benefits__banner-labels--1 {
   top: 34%;
-  left: 0;
+  left: 1%;
 }
 #es-loreal.es-loreal .es-benefits__banner-labels--2 {
   top: 15%;
   right: 0%;
 }
 #es-loreal.es-loreal .es-benefits__banner-labels--3 {
-  bottom: 15%;
+  bottom: 10%;
   right: 0;
+}
+#es-loreal.es-loreal .es-video {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+#es-loreal.es-loreal .es-video__title {
+  margin: 0;
+  padding: 0;
+  line-height: inherit;
+  color: inherit;
+  font-family: inherit;
+  font-weight: inherit;
+  margin-bottom: 32px;
+  font-weight: 300;
+  text-transform: uppercase;
+  font-size: 29px;
+  text-align: center;
+  letter-spacing: -1px;
+  line-height: 1.1;
+}
+#es-loreal.es-loreal .es-video__wrapper {
+  position: relative;
+  margin-bottom: 50px;
+}
+#es-loreal.es-loreal .es-video__player {
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+#es-loreal.es-loreal .es-video__play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+}
+#es-loreal.es-loreal .es-video__image-icon {
+  width: 53px;
+  height: 53px;
+}
+#es-loreal.es-loreal .es-video__image-icon--desktop {
+  width: 116px;
+  height: 116px;
+}
+#es-loreal.es-loreal .es-video__play-button--desktop {
+  display: none;
+}
+#es-loreal.es-loreal .es-swatches__title {
+  margin: 0;
+  padding: 0;
+  line-height: inherit;
+  color: inherit;
+  font-family: inherit;
+  font-weight: inherit;
+  margin-bottom: 32px;
+  font-weight: 300;
+  text-transform: uppercase;
+  font-size: 29px;
+  text-align: center;
+  letter-spacing: -1px;
+  line-height: 1.1;
+}
+#es-loreal.es-loreal .es-swatches__item-title {
+  margin: 0;
+  padding: 0;
+  line-height: inherit;
+  color: inherit;
+  font-family: inherit;
+  font-weight: inherit;
+  margin-left: -20px;
+  font-weight: bold;
+  font-size: 12px;
+  text-align: center;
+  text-transform: uppercase;
+}
+#es-loreal.es-loreal .es-swatches__group-1 {
+  margin-bottom: 50px;
+}
+#es-loreal.es-loreal .es-swatches__group-1, #es-loreal.es-loreal .es-swatches__group-2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#es-loreal.es-loreal .es-swatches__group-item {
+  margin-bottom: 20px;
+}
+#es-loreal.es-loreal .es-swatches__group-img {
+  max-width: 100%;
+  display: block;
+  margin: 0 auto;
+  max-width: 200px;
 }
 #es-loreal.es-loreal .es-look {
   display: flex;
@@ -490,6 +576,9 @@ body {
     background-size: cover;
     min-height: 360px;
   }
+  #es-loreal.es-loreal .es-benefits__img--mobile {
+    max-width: 400px;
+  }
 }
 @media screen and (min-width: 490px) {
   #es-loreal.es-loreal .es-kv__banner {
@@ -499,6 +588,14 @@ body {
   #es-loreal.es-loreal .es-kv__packshot img {
     height: 230px;
   }
+  #es-loreal.es-loreal .es-swatches__group-1, #es-loreal.es-loreal .es-swatches__group-2 {
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+  }
+  #es-loreal.es-loreal .es-swatches__group-img {
+    max-width: 170px;
+  }
 }
 @media screen and (min-width: 530px) {
   #es-loreal.es-loreal .es-kv__brand {
@@ -507,20 +604,25 @@ body {
   #es-loreal.es-loreal .es-kv__brand-title--text {
     font-size: 20px;
   }
+  #es-loreal.es-loreal .es-kv__brand-title--text span {
+    font-size: 14px;
+  }
   #es-loreal.es-loreal .es-kv__banner {
     position: relative;
     background: url(./images/bg-kv.png) no-repeat center;
     background-size: cover;
-  }
-  #es-loreal.es-loreal .es-kv__fancy {
-    font-size: 14px;
-    max-width: none;
   }
   #es-loreal.es-loreal .es-benefits__container {
     gap: 10px;
   }
   #es-loreal.es-loreal .es-benefits__single {
     width: 160px;
+  }
+  #es-loreal.es-loreal .es-video__play-button--mobile {
+    display: none;
+  }
+  #es-loreal.es-loreal .es-video__play-button--desktop {
+    display: block;
   }
 }
 @media screen and (min-width: 600px) {
@@ -568,15 +670,9 @@ body {
   #es-loreal.es-loreal .es-kv__brand-title--text {
     display: none;
   }
-  #es-loreal.es-loreal .es-kv__fancy {
-    font-size: 18px;
-  }
   #es-loreal.es-loreal .es-kv__packshot img {
     max-width: 300px;
     margin-left: 290px;
-  }
-  #es-loreal.es-loreal .es-kv__fancy {
-    margin-bottom: 10px;
   }
   #es-loreal.es-loreal .es-kv__lines {
     display: block;
@@ -625,12 +721,35 @@ body {
   #es-loreal.es-loreal .es-info__title {
     font-size: 32px;
   }
+  #es-loreal.es-loreal .es-video {
+    padding: 56px 40px 32px 40px;
+  }
+  #es-loreal.es-loreal .es-video__title {
+    font-size: 32px;
+  }
   #es-loreal.es-loreal .es-benefits__banner-title {
     margin-bottom: 0;
     font-size: 32px;
   }
   #es-loreal.es-loreal .es-benefits__single {
     width: 220px;
+  }
+  #es-loreal.es-loreal .es-benefits__banner {
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0 16px;
+  }
+  #es-loreal.es-loreal .es-benefits__banner--mobile {
+    display: none;
+  }
+  #es-loreal.es-loreal .es-benefits__packshot {
+    padding-top: 100px;
+  }
+  #es-loreal.es-loreal .es-benefits__packshot img {
+    height: 340px;
+    min-width: 200px;
   }
   #es-loreal.es-loreal .es-look {
     padding-bottom: 32px;
@@ -654,6 +773,10 @@ body {
     width: auto;
     margin-right: 45px;
     height: 305px;
+  }
+  #es-loreal.es-loreal .es-kv__brand-name {
+    margin-top: 20px;
+    max-width: 300px;
   }
   #es-loreal.es-loreal .es-benefits__container {
     gap: 5px;
@@ -685,6 +808,12 @@ body {
   #es-loreal.es-loreal .es-benefits__img--line-3 {
     position: relative;
     left: -56px;
+  }
+  #es-loreal.es-loreal .es-benefits__banner-labels--3 {
+    bottom: 15%;
+  }
+  #es-loreal.es-loreal .es-swatches__group-img {
+    max-width: 180px;
   }
   #es-loreal.es-loreal .es-look__container {
     display: flex;

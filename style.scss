@@ -81,7 +81,6 @@ body {
       align-items: center;
     }
     &__brand-name {
-      // display: none;
       max-width: 150px;
       margin-bottom: 20px;
       margin-right: 5px;
@@ -91,7 +90,6 @@ body {
         max-width: 200px;
         margin: 0 auto;
         margin-top: 30px;
-        // text-align: center;
       }
     }
     &__brand-title {
@@ -105,18 +103,11 @@ body {
         color: #fff;
         text-transform: uppercase;
         text-shadow: 1px 1px 1px black;
+
+        & span {
+          font-size: 10px;
+        }
       }
-    }
-    &__fancy {
-      align-self: flex-start;
-      @include text;
-      margin-bottom: 5px;
-      margin: 5px;
-      max-width: 200px;
-      font-size: 12px;
-      font-weight: 600;
-      color: #fff;
-      text-transform: uppercase;
     }
     &__title {
       @include text;
@@ -271,13 +262,6 @@ body {
     &__text {
       @include text;
       text-align: center;
-      // &--banner {
-      //   font-weight: 700;
-      //   text-transform: uppercase;
-      //   font-size: 59px;
-      //   flex: 5;
-      //   text-align: left;
-      // }
       &--right {
         text-align: right;
       }
@@ -293,9 +277,6 @@ body {
     }
     &__packshot {
       flex: 3;
-      img {
-        // max-width: 300px;
-      }
     }
     &__banner {
       position: relative;
@@ -318,6 +299,13 @@ body {
       max-width: 260px;
       text-align: left;
 
+      &--mobile {
+        position: static;
+        margin: 0 auto;
+        margin-bottom: 20px;
+        max-width: 90%;
+      }
+
       b {
         color: #93060c;
         font-size: 17px;
@@ -325,7 +313,7 @@ body {
 
       &--1 {
         top: 34%;
-        left: 0;
+        left: 1%;
       }
 
       &--2 {
@@ -334,9 +322,94 @@ body {
       }
 
       &--3 {
-        bottom: 15%;
+        bottom: 10%;
         right: 0;
       }
+    }
+  }
+
+  .es-video {
+    padding-left: 15px;
+    padding-right: 15px;
+
+    &__title {
+      @include text;
+      margin-bottom: 32px;
+      font-weight: 300;
+      text-transform: uppercase;
+      font-size: 29px;
+      text-align: center;
+      letter-spacing: -1px;
+      line-height: 1.1;
+    }
+    &__wrapper {
+      position: relative;
+      margin-bottom: 50px;
+    }
+    &__player {
+      display: block;
+      margin: 0 auto;
+      width: 100%;
+      object-fit: cover;
+    }
+    &__play-button {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      cursor: pointer;
+    }
+    &__image-icon {
+      width: 53px;
+      height: 53px;
+
+      &--desktop {
+        width: 116px;
+        height: 116px;
+      }
+    }
+    &__play-button {
+      &--desktop {
+        display: none;
+      }
+    }
+  }
+
+  .es-swatches {
+    &__title {
+      @include text;
+      margin-bottom: 32px;
+      font-weight: 300;
+      text-transform: uppercase;
+      font-size: 29px;
+      text-align: center;
+      letter-spacing: -1px;
+      line-height: 1.1;
+    }
+    &__item-title {
+      @include text;
+      margin-left: -20px;
+      font-weight: bold;
+      font-size: 12px;
+      text-align: center;
+      text-transform: uppercase;
+    }
+    &__group-1 {
+      margin-bottom: 50px;
+    }
+    &__group-1,
+    &__group-2 {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    &__group-item {
+      margin-bottom: 20px;
+    }
+
+    &__group-img {
+      @include img;
+      max-width: 200px;
     }
   }
   .es-look {
@@ -421,6 +494,7 @@ body {
       }
     }
   }
+
   @media screen and (min-width: 370px) {
     .es-kv {
       &__brand-title {
@@ -477,14 +551,20 @@ body {
         min-height: 360px;
       }
     }
+
+    .es-benefits {
+      &__img {
+        &--mobile {
+          max-width: 400px;
+        }
+      }
+    }
   }
 
   @media screen and (min-width: 490px) {
     .es-kv {
       &__banner {
         position: relative;
-        // background: url(./images/bg-kv.png) no-repeat center;
-        // background-size: cover;
         min-height: 426px;
       }
       &__packshot {
@@ -493,32 +573,39 @@ body {
         }
       }
     }
+
+    .es-swatches {
+      &__group-1,
+      &__group-2 {
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: center;
+      }
+
+      &__group-img {
+        max-width: 170px;
+      }
+    }
   }
 
   @media screen and (min-width: 530px) {
     .es-kv {
       &__brand {
-        // margin-right: 20px;
         justify-content: flex-end;
       }
       &__brand-title {
         &--text {
           font-size: 20px;
+
+          & span {
+            font-size: 14px;
+          }
         }
       }
       &__banner {
         position: relative;
         background: url(./images/bg-kv.png) no-repeat center;
         background-size: cover;
-      }
-      &__packshot {
-        & img {
-          // height: 350px;
-        }
-      }
-      &__fancy {
-        font-size: 14px;
-        max-width: none;
       }
     }
 
@@ -528,6 +615,17 @@ body {
       }
       &__single {
         width: 160px;
+      }
+    }
+
+    .es-video {
+      &__play-button {
+        &--mobile {
+          display: none;
+        }
+        &--desktop {
+          display: block;
+        }
       }
     }
   }
@@ -543,6 +641,7 @@ body {
       }
     }
   }
+
   @media screen and (min-width: 768px) {
     .es-kv {
       &__stars {
@@ -580,17 +679,11 @@ body {
           display: none;
         }
       }
-      &__fancy {
-        font-size: 18px;
-      }
       &__packshot {
         img {
           max-width: 300px;
           margin-left: 290px;
         }
-      }
-      &__fancy {
-        margin-bottom: 10px;
       }
       &__lines {
         display: block;
@@ -639,6 +732,12 @@ body {
         font-size: 32px;
       }
     }
+    .es-video {
+      padding: 56px 40px 32px 40px;
+      &__title {
+        font-size: 32px;
+      }
+    }
     .es-benefits {
       &__banner-title {
         margin-bottom: 0;
@@ -646,6 +745,25 @@ body {
       }
       &__single {
         width: 220px;
+      }
+
+      &__banner {
+        display: flex;
+        flex-flow: row;
+        justify-content: center;
+        align-items: center;
+        padding: 0 16px;
+
+        &--mobile {
+          display: none;
+        }
+      }
+      &__packshot {
+        padding-top: 100px;
+        img {
+          height: 340px;
+          min-width: 200px;
+        }
       }
     }
     .es-look {
@@ -674,6 +792,10 @@ body {
           margin-right: 45px;
           height: 305px;
         }
+      }
+      &__brand-name {
+        margin-top: 20px;
+        max-width: 300px;
       }
     }
     .es-benefits {
@@ -710,6 +832,16 @@ body {
           position: relative;
           left: -56px;
         }
+      }
+      &__banner-labels {
+        &--3 {
+          bottom: 15%;
+        }
+      }
+    }
+    .es-swatches {
+      &__group-img {
+        max-width: 180px;
       }
     }
     .es-look {

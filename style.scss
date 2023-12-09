@@ -1,0 +1,782 @@
+@charset "UTF-8";
+
+$regular: 'Montserrat', sans-serif;
+$red: #e03e2f;
+$black: #1d1d1b;
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+@mixin text {
+  margin: 0;
+  padding: 0;
+  line-height: inherit;
+  color: inherit;
+  font-family: inherit;
+  font-weight: inherit;
+}
+
+@mixin img {
+  max-width: 100%;
+  display: block;
+  margin: 0 auto;
+}
+
+#es-loreal.es-loreal {
+  font-family: $regular;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.2;
+  max-width: 930px;
+  margin: 0 auto;
+  padding: 0;
+  overflow: hidden;
+  color: $black;
+  background: #fff;
+  padding-bottom: 64px;
+
+  * {
+    box-sizing: border-box;
+  }
+
+  h2,
+  h3,
+  h4,
+  h5 {
+    font-family: $regular;
+    color: $black;
+  }
+
+  .es-kv {
+    position: relative;
+    padding-top: 24px;
+    &__disclaimer {
+      position: absolute;
+      bottom: -30px;
+      right: 10px;
+      font-size: 12px;
+    }
+    &__logo {
+      margin: 24px 0;
+      margin-top: 0;
+      opacity: 0;
+      animation: slidedown 0.6s ease forwards;
+    }
+    &__banner {
+      position: relative;
+      background: url(./images/bg-kv.png) no-repeat -140px center;
+      background-size: cover;
+      min-height: 250px;
+      padding-top: 20px;
+      overflow: hidden;
+    }
+
+    &__brand {
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+    }
+    &__brand-name {
+      // display: none;
+      max-width: 150px;
+      margin-bottom: 20px;
+      margin-right: 5px;
+
+      &--mobile {
+        display: block;
+        max-width: 200px;
+        margin: 0 auto;
+        margin-top: 30px;
+        // text-align: center;
+      }
+    }
+    &__brand-title {
+      display: none;
+
+      &--text {
+        @include text;
+        max-width: 200px;
+        font-size: 14px;
+        font-weight: 600;
+        color: #fff;
+        text-transform: uppercase;
+        text-shadow: 1px 1px 1px black;
+      }
+    }
+    &__fancy {
+      align-self: flex-start;
+      @include text;
+      margin-bottom: 5px;
+      margin: 5px;
+      max-width: 200px;
+      font-size: 12px;
+      font-weight: 600;
+      color: #fff;
+      text-transform: uppercase;
+    }
+    &__title {
+      @include text;
+      font-size: 20px;
+      font-weight: 700;
+      text-transform: uppercase;
+      text-align: center;
+      margin-bottom: 8px;
+    }
+    &__title-group {
+      display: flex;
+      gap: 10px;
+    }
+    &__text {
+      @include text;
+      font-weight: 500;
+      text-align: center;
+    }
+    &__packshot {
+      position: absolute;
+      opacity: 0;
+      animation: appear 0.6s ease forwards;
+      animation-delay: 0.6s;
+      bottom: 0;
+      right: 0;
+      padding: 0 8px;
+      img {
+        max-width: 240px;
+        height: 147px;
+        margin-right: 0;
+      }
+    }
+    &__img {
+      @include img;
+    }
+    &__lines {
+      display: none;
+    }
+    &__tik {
+      padding: 24px;
+      img {
+        margin-left: 0;
+      }
+    }
+    &__content {
+      padding: 0 2px;
+      opacity: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      &--1 {
+        position: absolute;
+        left: 2%;
+        bottom: 5%;
+        animation: slideright 0.6s ease forwards;
+        animation-delay: 0.6s;
+      }
+    }
+    &__disc {
+      @include text;
+      font-size: 12px;
+      position: absolute;
+      left: 16px;
+      bottom: 16px;
+      z-index: 3;
+    }
+  }
+
+  .es-info {
+    padding: 56px 16px 32px 16px;
+    &__title {
+      @include text;
+      margin-bottom: 32px;
+      font-weight: 300;
+      text-transform: uppercase;
+      font-size: 29px;
+      text-align: center;
+      letter-spacing: -1px;
+      line-height: 1.1;
+    }
+    &__text {
+      @include text;
+      text-align: center;
+    }
+  }
+
+  .es-benefits {
+    position: relative;
+    z-index: 2;
+    &__container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 48px 0;
+    }
+    &__banner-title {
+      @include text;
+      padding-top: 100px;
+      margin-bottom: 32px;
+      font-weight: 300;
+      text-transform: uppercase;
+      font-size: 29px;
+      text-align: center;
+      letter-spacing: -1px;
+      line-height: 1.1;
+    }
+    &__single {
+      &:hover {
+        .es-benefits__img--bg {
+          transform: scale(1.1);
+        }
+      }
+    }
+    &__image {
+      overflow: hidden;
+      margin-bottom: 16px;
+    }
+    &__img {
+      @include img;
+      transition: all 0.6s;
+      &--banner {
+        flex: 4;
+      }
+    }
+    &__tile {
+      position: relative;
+    }
+    &__label {
+      @include text;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 100%;
+      text-transform: uppercase;
+      font-size: 32px;
+      text-align: center;
+      line-height: 1.1;
+      transform: translate(-50%, -50%);
+      span {
+        font-size: 80px;
+      }
+    }
+    &__title {
+      @include text;
+      min-height: 20.45px;
+      text-align: center;
+      margin-bottom: 16px;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+    &__text {
+      @include text;
+      text-align: center;
+      // &--banner {
+      //   font-weight: 700;
+      //   text-transform: uppercase;
+      //   font-size: 59px;
+      //   flex: 5;
+      //   text-align: left;
+      // }
+      &--right {
+        text-align: right;
+      }
+      span {
+        font-weight: 400;
+      }
+    }
+    &__disc {
+      @include text;
+      padding-top: 16px;
+      text-align: center;
+      font-size: 12px;
+    }
+    &__packshot {
+      flex: 3;
+      img {
+        // max-width: 300px;
+      }
+    }
+    &__banner {
+      position: relative;
+      padding: 32px 16px;
+      display: flex;
+      flex-flow: column;
+      align-items: center;
+      display: none;
+      width: 100%;
+    }
+    &__brand {
+      img {
+        max-width: 260px;
+      }
+    }
+    &__banner-labels {
+      position: absolute;
+      @include text;
+      text-align: center;
+      max-width: 260px;
+      text-align: left;
+
+      b {
+        color: #93060c;
+        font-size: 17px;
+      }
+
+      &--1 {
+        top: 34%;
+        left: 0;
+      }
+
+      &--2 {
+        top: 15%;
+        right: 0%;
+      }
+
+      &--3 {
+        bottom: 15%;
+        right: 0;
+      }
+    }
+  }
+  .es-look {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 32px;
+    &__photo {
+      margin-bottom: 32px;
+    }
+    &__img {
+      @include img;
+    }
+    &__img--mobile {
+      max-height: 400px;
+    }
+    &__title {
+      @include text;
+      margin-bottom: 32px;
+      font-weight: 300;
+      text-transform: uppercase;
+      font-size: 32px;
+      text-align: center;
+      align-self: center;
+      letter-spacing: -1px;
+      line-height: 1.1;
+    }
+    &__products {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: flex-end;
+      gap: 64px 16px;
+    }
+    &__single {
+      width: 180px;
+    }
+    &__products-desktop {
+      display: none;
+    }
+
+    &__packshot {
+      margin-bottom: 32px;
+    }
+    &__name {
+      @include text;
+      text-align: center;
+      font-size: 12px;
+      line-height: 2;
+      margin-bottom: 8px;
+    }
+    &__link {
+      @include text;
+      padding: 12px;
+      border-radius: 4px;
+      color: #fff;
+      text-align: center;
+      font-size: 16px;
+      font-weight: 700;
+      background: $black;
+      text-decoration: none;
+      display: block;
+      transition: background 0.3s;
+      &:hover {
+        background: #e1044b;
+      }
+    }
+  }
+
+  .es-routine {
+    &__disclaimer {
+      font-size: 12px;
+      text-align: center;
+    }
+  }
+
+  @media screen and (min-width: 330px) {
+    .es-kv {
+      &__banner {
+        background: url(./images/bg-kv.png) no-repeat -103px center;
+        background-size: cover;
+      }
+    }
+  }
+  @media screen and (min-width: 370px) {
+    .es-kv {
+      &__brand-title {
+        &--text {
+          max-width: 300px;
+          font-size: 14px;
+        }
+      }
+      &__banner {
+        background: url(./images/bg-kv.png) no-repeat -60px center;
+        background-size: cover;
+      }
+    }
+  }
+
+  @media screen and (min-width: 410px) {
+    .es-kv {
+      &__banner {
+        position: relative;
+        background: url(./images/bg-kv.png) no-repeat -180px center;
+        background-size: cover;
+        min-height: 326px;
+      }
+      &__packshot {
+        img {
+          height: 200px;
+        }
+      }
+      &__brand-title {
+        &--text {
+          max-width: 300px;
+          font-size: 16px;
+        }
+      }
+      &__brand-name {
+        display: block;
+        max-width: 200px;
+        margin-bottom: 20px;
+        margin-right: 30px;
+
+        &--mobile {
+          display: none;
+        }
+      }
+    }
+  }
+
+  @media screen and (min-width: 430px) {
+    .es-kv {
+      &__banner {
+        position: relative;
+        background: url(./images/bg-kv.png) no-repeat -180px center;
+        background-size: cover;
+        min-height: 360px;
+      }
+    }
+  }
+
+  @media screen and (min-width: 490px) {
+    .es-kv {
+      &__banner {
+        position: relative;
+        // background: url(./images/bg-kv.png) no-repeat center;
+        // background-size: cover;
+        min-height: 426px;
+      }
+      &__packshot {
+        img {
+          height: 230px;
+        }
+      }
+    }
+  }
+
+  @media screen and (min-width: 530px) {
+    .es-kv {
+      &__brand {
+        // margin-right: 20px;
+        justify-content: flex-end;
+      }
+      &__brand-title {
+        &--text {
+          font-size: 20px;
+        }
+      }
+      &__banner {
+        position: relative;
+        background: url(./images/bg-kv.png) no-repeat center;
+        background-size: cover;
+      }
+      &__packshot {
+        & img {
+          // height: 350px;
+        }
+      }
+      &__fancy {
+        font-size: 14px;
+        max-width: none;
+      }
+    }
+
+    .es-benefits {
+      &__container {
+        gap: 10px;
+      }
+      &__single {
+        width: 160px;
+      }
+    }
+  }
+
+  @media screen and (min-width: 600px) {
+    .es-kv {
+      &__brand-title {
+        display: block;
+        max-width: 400px;
+        &--text {
+          display: none;
+        }
+      }
+    }
+  }
+  @media screen and (min-width: 768px) {
+    .es-kv {
+      &__stars {
+        display: flex;
+        visibility: visible;
+      }
+      &__disclaimer {
+        position: absolute;
+        bottom: 0;
+        right: 10px;
+        font-size: 12px;
+      }
+      &__banner {
+        position: relative;
+      }
+      &__content {
+        position: absolute;
+        z-index: 3;
+        &--1 {
+          left: 20px;
+          bottom: 20px;
+          min-width: 332px;
+        }
+        &--2 {
+          top: 144px;
+          left: 68%;
+        }
+        img {
+          display: block;
+        }
+      }
+      &__brand-title {
+        max-width: 500px;
+        &--text {
+          display: none;
+        }
+      }
+      &__fancy {
+        font-size: 18px;
+      }
+      &__packshot {
+        img {
+          max-width: 300px;
+          margin-left: 290px;
+        }
+      }
+      &__fancy {
+        margin-bottom: 10px;
+      }
+      &__lines {
+        display: block;
+      }
+      &__line {
+        margin-bottom: 24px;
+        img {
+          margin-right: 24px;
+        }
+      }
+      &__line-2 {
+        position: absolute;
+        left: -85px;
+        width: fit-content;
+        img {
+          margin-left: 48px;
+        }
+      }
+      &__line-3 {
+        position: absolute;
+        left: -50px;
+        top: 215px;
+        width: fit-content;
+      }
+      &__badge {
+        margin-top: 40px;
+        display: flex;
+        flex-direction: row;
+        align-content: space-around;
+        position: relative;
+      }
+      &__text,
+      &__title {
+        text-align: left;
+      }
+      &__text {
+        margin-bottom: 24px;
+      }
+      &__brand-name {
+        max-width: 280px;
+      }
+    }
+    .es-info {
+      padding: 56px 40px 32px 40px;
+      &__title {
+        font-size: 32px;
+      }
+    }
+    .es-benefits {
+      &__banner-title {
+        margin-bottom: 0;
+        font-size: 32px;
+      }
+      &__single {
+        width: 220px;
+      }
+    }
+    .es-look {
+      padding-bottom: 32px;
+      &__packshot {
+        display: none;
+      }
+      &__products-desktop {
+        display: block;
+        margin: 0 auto;
+      }
+    }
+  }
+
+  @media screen and (min-width: 930px) {
+    .es-kv {
+      &__banner {
+        min-height: 500px;
+      }
+      &__brand-title {
+        max-width: 580px;
+      }
+      &__packshot {
+        & img {
+          width: auto;
+          margin-right: 45px;
+          height: 305px;
+        }
+      }
+    }
+    .es-benefits {
+      &__container {
+        gap: 5px;
+      }
+
+      &__banner {
+        display: flex;
+        flex-flow: row;
+        justify-content: center;
+        align-items: center;
+        padding: 0 16px;
+      }
+      &__packshot {
+        padding-top: 100px;
+        img {
+          height: 500px;
+          min-width: 200px;
+        }
+      }
+      &__single {
+        width: 300px;
+      }
+      &__img {
+        &--bg {
+          width: 100%;
+        }
+        &--line-1 {
+          position: relative;
+          left: 56px;
+        }
+        &--line-3 {
+          position: relative;
+          left: -56px;
+        }
+      }
+    }
+    .es-look {
+      &__container {
+        display: flex;
+        justify-content: space-between;
+        gap: 16px;
+      }
+      &__photo {
+        margin: 0;
+      }
+      &__title {
+        text-align: center;
+      }
+      &__content {
+        display: flex;
+        flex-flow: column;
+        justify-content: space-between;
+        padding-right: 16px;
+      }
+    }
+  }
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slidedown {
+  from {
+    opacity: 0;
+    transform: translateY(-32px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideright {
+  from {
+    opacity: 0.3;
+    transform: translateX(-100px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideleft {
+  from {
+    opacity: 0.3;
+    transform: translateX(100px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

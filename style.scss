@@ -733,7 +733,7 @@ body {
       }
     }
     .es-video {
-      padding: 56px 40px 32px 40px;
+      padding: 56px 15px 32px 15px;
       &__title {
         font-size: 32px;
       }
@@ -795,6 +795,7 @@ body {
       }
       &__brand-name {
         margin-top: 20px;
+        margin-right: 55px;
         max-width: 300px;
       }
     }
